@@ -1,4 +1,4 @@
-from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.serializers import ModelSerializer, HyperlinkedModelSerializer
 from shoe.models import Manufacturer, ShoeType, ShoeColor, Shoe
 
 class ManufacturerSerializer(HyperlinkedModelSerializer):
@@ -17,7 +17,7 @@ class ShoeColorSerializer(HyperlinkedModelSerializer):
         model = ShoeColor
         fields = ('color_name',)
 
-class ShoeSerializer(HyperlinkedModelSerializer):
+class ShoeSerializer(ModelSerializer):
     class Meta:
         model = Shoe
         fields = ('size', 'brand', 'manufacturer', 'color', 'material', 'shoe_type', 'fasten_type',)

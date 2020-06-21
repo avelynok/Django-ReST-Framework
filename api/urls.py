@@ -6,8 +6,8 @@ router = routers.DefaultRouter()
 router.register(r'manufacturer', ManufacturerViewSet, basename = 'manufacturer')
 router.register(r'type', ShoeTypeViewSet, basename = 'type')
 router.register(r'color', ShoeColorViewSet, basename = 'color')
-router.register(r'shoe', ShoeViewSet, basename = 'shoe')
+router.register(r'shoes', ShoeViewSet, basename = 'shoe')
 
 urlpatterns = [
-    url(r'api/', include(router.urls)),
+    url(r"^api/", include(router.urls))
 ]

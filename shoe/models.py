@@ -46,3 +46,5 @@ class Shoe(models.Model):
     material = models.CharField(max_length=30)
     shoe_type = models.ForeignKey(ShoeType, on_delete=models.CASCADE)
     fasten_type = models.CharField(max_length=30)
+    
+        
