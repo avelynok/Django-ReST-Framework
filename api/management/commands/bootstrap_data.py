@@ -3,7 +3,27 @@ from shoe.models import ShoeColor, ShoeType
 
 class Command(BaseCommand):
     help = 'populates ShoeColor and ShoeType tables with data.'
-
+    types = [
+        ('SK', 'Sneaker'),
+        ('B', 'Boot'),
+        ('SD', 'Sandal'),
+        ('D', 'Dress'),
+        ('O', 'Other')
+    ]
+    
+    colors = [
+        ('R', 'red'),
+        ('O', 'orange'),
+        ('Y', 'yellow'),
+        ('G', 'green'),
+        ('B', 'blue'),
+        ('I', 'indigo'),
+        ('V', 'violet'),
+        ('B', 'black'),
+        ('W', 'white'),
+    ]
+    
+    
     def handle(self, *args, **options):
         for color in colors:
             ShoeColor.objects.create(
